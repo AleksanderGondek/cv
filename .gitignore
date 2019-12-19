@@ -1,3 +1,6 @@
+## Nix result dir
+result
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
