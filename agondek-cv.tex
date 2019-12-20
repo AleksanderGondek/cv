@@ -1,28 +1,287 @@
-\documentclass{article}
+\documentclass[9pt]{style/developercv}
+
+\edef \myLocation{\directlua{tex.sprint(os.getenv('LOCATION'))}}
+\edef \myCellPhone{\directlua{tex.sprint(os.getenv('CELL_NUMBER'))}}
+\edef \myEmailLink{\directlua{tex.sprint(os.getenv('EMAIL_LINK'))}}
+\edef \myEmail{\directlua{tex.sprint(os.getenv('EMAIL_DISPLAY'))}}
+\edef \myWebsiteLink{\directlua{tex.sprint(os.getenv('WEBSITE_LINK'))}}
+\edef \myWebsite{\directlua{tex.sprint(os.getenv('WEBSITE_DISPLAY'))}}
+\edef \myLinkedinLink{\directlua{tex.sprint(os.getenv('LINKEDIN_LINK'))}}
+\edef \myLinkedin{\directlua{tex.sprint(os.getenv('LINKEDIN_DISPLAY'))}}
 
 \begin{document}
 
-\title{Introduction to \LaTeX{}}
-\author{Author's Name 2}
+%----------------------------------------------------------------------------------------
+%	TITLE AND CONTACT INFORMATION
+%----------------------------------------------------------------------------------------
 
-\maketitle
+\begin{minipage}[t]{0.45\textwidth}
+	\vspace{-\baselineskip}
 
-\begin{abstract}
-The abstract text goes here.
-\end{abstract}
+	\colorbox{black}{{\HUGE\textcolor{white}{\textbf{\MakeUppercase{Aleksander}}}}}
+	
+	\colorbox{black}{{\HUGE\textcolor{white}{\textbf{\MakeUppercase{Gondek}}}}}
+	
+	\vspace{6pt}
+	
+	{\huge Software Engineer}
+\end{minipage}
+\begin{minipage}[t]{0.275\textwidth}
+	\vspace{-\baselineskip}
+	
+	\icon{MapMarker}{12}{\myLocation}\\
+	\icon{Phone}{12}{\myCellPhone} \\
+	\icon{At}{12}{\href{\myEmailLink}{\myEmail}}\\	
+\end{minipage}
+\begin{minipage}[t]{0.275\textwidth}
+	\vspace{-\baselineskip}
+	
+	\icon{Globe}{12}{\href{\myWebsiteLink}{\myWebsite}}\\
+	\icon{Github}{12}{\href{https://github.com/AleksanderGondek}{AleksanderGondek}}\\
+	\icon{Linkedin}{12}{\href{\myLinkedinLink}{\myLinkedin}}\\
+\end{minipage}
 
-\section{Introduction}
-Here is the text of your introduction.
+\vspace{0.5cm}
 
-\begin{equation}
-    \label{simple_equation}
-    \alpha = \sqrt{ \beta }
-\end{equation}
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION, SKILLS AND TECHNOLOGIES
+%----------------------------------------------------------------------------------------
 
-\subsection{Subsection Heading Here}
-Write your subsection text here.
+\cvsect{Who Am I?}
 
-\section{Conclusion}
-Write your conclusion here.
+\begin{minipage}[t]{0.4\textwidth} % 40% of the page width for the introduction text
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	Jack of all trades, master of none - having a broad software development experience and deep passion for work,
+	I seek to bring state-of-art solutions to anny endeavour I have currenty embarked upon. \\ \\
+	Above all, I enjoy working with complex systems and simplfying them in the process.
+
+\end{minipage}
+\hfill % Whitespace between
+\begin{minipage}[t]{0.5\textwidth} % 50% of the page for the skills bar chart
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	\begin{barchart}{5.5}
+		\baritem{Python}{80}
+		\baritem{Scala}{50}
+		\baritem{Kubernetes}{70}
+		\baritem{Microservices}{70}
+		\baritem{Nix}{60}
+		\baritem{Typescript}{50}
+	\end{barchart}
+\end{minipage}
+
+\vspace{1cm}
+
+%----------------------------------------------------------------------------------------
+%	TOP QUALITIES
+%----------------------------------------------------------------------------------------
+
+\begin{minipage}[t]{0.3\textwidth}
+	\vspace{-\baselineskip}
+
+	\cvsect{Craftmanship}
+
+	\lorem\lorem
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\vspace{-\baselineskip}
+	
+	\cvsect{Ownership}
+	
+	\lorem\lorem
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\vspace{-\baselineskip}
+	
+	\cvsect{Creativity}
+	
+	\lorem\lorem
+\end{minipage}
+
+\vspace{0.75cm}
+
+%----------------------------------------------------------------------------------------
+%	EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\cvsect{Experience}
+
+\begin{entrylist}
+	\entry
+		{Nov 2019 -- Present\\\footnotesize{IT Expert Developer}\\Nov 2018 -- Nov 2019\\\footnotesize{Senior IT Developer}}
+		{Scala Tech Lead (DevOps Developer)}
+		{Nordea}
+		{
+			\texttt{Nix}\slashsep
+			\texttt{Bazel}\slashsep
+			\texttt{Kubernetes}\slashsep
+			\texttt{Argo}\slashsep
+			\texttt{Scala}\slashsep
+			\texttt{Elastic Search}\slashsep
+			\texttt{Kafka}\\
+
+			Developing proprietary solution akin to \href{https://egeria.odpi.org}{Egeria},
+			based upon microservices architecture and realising high availability demands. The solution
+			allos users to search and exchange different metadata used by wide range of internal teams.\\ \\
+			\lorem\lorem\lorem
+		}
+	\entry
+		{Apr 2018 -- Nov 2018\\\footnotesize{IT Infrastructure Specialist}}
+		{Container Platform Engineer}
+		{Nordea}
+		{
+			\texttt{Ansible}\slashsep
+			\texttt{Python}\slashsep
+			\texttt{Kubernetes}\slashsep
+			\texttt{Rancher}\slashsep
+			\texttt{OpenShift}\slashsep
+			\texttt{Grafana}\\
+
+			I have created the PoC of container-based application platform, build from the ground up with automation, policy enforcement, 
+			openness and configurability in mind. 
+			It has been constructed from exclusively open-source components to allow for maximum synergy with current cloud-base 
+			tools and practices. \\
+			PoC received very good initial feedback from the developers, 
+			who found out it significantly simplified their every-day work.\\
+			\lorem\lorem
+		}
+	\entry
+		{Mar 2015 -- Apr 2018\\\footnotesize{Graphics Software Engineer}}
+		{Full Stack Develper}
+		{Intel Corporation Poland}
+		{
+			\texttt{Python}\slashsep
+			\texttt{Flask}\slashsep
+			\texttt{Celery}\slashsep
+			\texttt{Docker}\slashsep
+			\texttt{Riak}\slashsep
+			\texttt{AngularJS 1}\slashsep
+			\texttt{Redis}\\
+
+			I was part of team developing internal test management and reporting system which processed significant amounts of data daily,
+			giving the end-user ability to perform flexible, customizable lookups and follow latest data trends.
+			Solution was built with micro-services oriented architecture, with focus being placed on high avaiability and scalability.
+			Working in fully cross-functional manner allowed me to deliver improvements in infrastructure, web, backend and database layers of the system.\\
+			\lorem\lorem\lorem
+		}
+	\entry
+		{Mar 2014 -- Mar 2015\\\footnotesize{Internship}}
+		{C\# Developer}
+		{Intel Corporation Poland}
+		{
+			\texttt{ASP.NET}\slashsep
+			\texttt{JS}\slashsep
+			\texttt{MS-SQL}\slashsep
+			\texttt{.NET MVC}\slashsep
+			\texttt{Workflows}\\
+
+			Single-handedly revamped automation/workflow solution which integrated multiple internal proprietary tools, 
+			needed for processing changes to graphical driver. As a result, time-to-delivery of driver patches was decreased, 
+			and I was awarded with Department Recognition Award.
+		}
+	\entry
+		{Jul 2013 -- Aug 2013\\\footnotesize{Internship}}
+		{Android Application Tester}
+		{SolDevelo}
+		{
+			\texttt{Java}\slashsep
+			\texttt{Android}\slashsep
+			\texttt{Spring}\slashsep
+			\texttt{Validation}\slashsep
+			\texttt{Continous Integration}\\
+
+			I was part of the validation team responsible for testing whether mobile app meets the user expectations
+			and covers all gathered user stories. Since the app was written in Java for Android, all testing was also done in Java.
+			Most of the skills acquired relate to proper testing and systems integration.
+		}
+	\entry
+		{Sep 2011 -- Mar 2014\\\footnotesize{Freelance}}
+		{Web Developer}
+		{}
+		{
+			\texttt{JS}\slashsep
+			\texttt{CSS}\slashsep
+			\texttt{Bootstrap}\slashsep
+			\texttt{.NET MVC}\slashsep
+			\texttt{Node.js}\\
+
+			Worked as a website designer and backend developer - have written couple of static websites
+			(adhering to responsive design) and handful of ASP.NET MVC based pages. Most notably, I have 
+			co-authored portal, where people could interact with health specialists.\\
+			The skills acquired mostly relate to designing a funtinal webiste, as well as technicalities of
+			web protocols.
+		}
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+
+\cvsect{Education}
+
+\begin{entrylist}
+	\entry
+		{2014 -- 2016}
+		{Master of Engineering, Computer Science}
+		{Gdańsk Univeristy of Technology}
+		{
+			Specialization: Distributed Applications and Internet Services \\
+			Studies were conducted in English language
+		}
+	\entry
+		{2010 -- 2014}
+		{Bachelor of Engineering, Computer Science}
+		{Gdańsk Univeristy of Technology}
+		{}
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	ADDITIONAL INFORMATION
+%----------------------------------------------------------------------------------------
+
+\begin{minipage}[t]{0.3\textwidth}
+	\vspace{-\baselineskip}
+
+	\cvsect{Languages}
+
+	\textbf{English} - proficent\\
+	\textbf{German} - rudimentary\\
+	\textbf{Polish} - native
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\vspace{-\baselineskip}
+	
+	\cvsect{Hobbies}
+	
+	Role-playing games\\
+	Speculative fiction\\
+	Cinematography\\
+	Distributed systems
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\vspace{-\baselineskip}
+	
+	\cvsect{Certificates}
+	
+	Cambridge English: Proficiency
+	Functional Program Design (\textit{EPFL})\\
+	Functional Programming Principles (\textit{EPFL})
+\end{minipage}
+
+%----------------------------------------------------------------------------------------
+
+\vspace{0.75cm}
+
+\begin{minipage}[t]{1\textwidth}
+	I hereby agree to the processing of personal data provided in this document for realising the recruitment process pursuant
+	to the Personal Data Protection Act of 10 May 2018 (Journal of Laws 2018, item 1000) and in agreement with Regulation (EU) 
+	2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard 
+	to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC 
+	(General Data Protection Regulation).
+\end{minipage}
 
 \end{document}
