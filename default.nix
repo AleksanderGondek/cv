@@ -5,19 +5,27 @@ pkgs.stdenv.mkDerivation {
   src = ./.;
 
   buildInputs = with pkgs; [ 
-    texlive.combined.scheme-medium
+    (texlive.combine {
+      inherit (texlive)
+        scheme-medium
+        fontawesome
+        geometry
+        hyperref
+        moresize
+        raleway;
+    })
   ];
 
   buildPhase = ''
     # See: https://tex.stackexchange.com/questions/496275/texlive-2019-lualatex-doesnt-compile-document
     # Without export, lualatex fails silently, with exit code '0'
     export TEXMFVAR=$(pwd)
-    lualatex agondek-cv.tex
+    lualatex main.tex
   '';
 
   installPhase = ''
     mkdir -p $out
-    cp agondek-cv.log $out
-    cp agondek-cv.pdf $out
+    cp main.log $out
+    cp main.pdf $out
   '';
 }
