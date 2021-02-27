@@ -9,6 +9,20 @@
 \edef \myLinkedinLink{\directlua{tex.sprint(os.getenv('LINKEDIN_LINK'))}}
 \edef \myLinkedin{\directlua{tex.sprint(os.getenv('LINKEDIN_DISPLAY'))}}
 
+\hypersetup{
+	pdfinfo={
+	Title={Gondek: Curriculum Vitae},
+	Subject={Gondek: Curriculum Vitae},
+	Keywords={
+		Containers, Kubernetes, Python, 
+		Nix, Nixpkgs, NixOS, 
+		Scala, Microservices, Functional Programming,
+		Bazel, Argo, NoSQL,
+		Actor Model Framework,
+	},
+	Author={Aleksander Gondek}
+}}
+
 \begin{document}
 
 %----------------------------------------------------------------------------------------
